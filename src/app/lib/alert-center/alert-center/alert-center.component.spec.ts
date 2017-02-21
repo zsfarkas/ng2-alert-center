@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AlertCenterComponent } from './alert-center.component';
+import {AlertCenterComponent} from './alert-center.component';
+import {CommonModule} from '@angular/common';
+import {AlertComponent} from '../alert/alert.component';
+import {AlertCenterService} from '../service/alert-center.service';
 
 describe('AlertCenterComponent', () => {
   let component: AlertCenterComponent;
@@ -8,9 +11,11 @@ describe('AlertCenterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertCenterComponent ]
+      declarations: [AlertCenterComponent, AlertComponent],
+      imports: [CommonModule],
+      providers: [AlertCenterService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

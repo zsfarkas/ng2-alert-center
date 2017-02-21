@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AlertGeneratorComponent } from './alert-generator.component';
 import {AlertCenterModule} from '../lib/alert-center/alert-center-module';
 import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 describe('AlertGeneratorComponent', () => {
   let component: AlertGeneratorComponent;
@@ -11,7 +12,7 @@ describe('AlertGeneratorComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AlertGeneratorComponent ],
-      imports: [AlertCenterModule, FormsModule]
+      imports: [AlertCenterModule, FormsModule, CommonModule]
     })
     .compileComponents();
   }));
