@@ -98,8 +98,8 @@
       "check-type"
     ],
 
-    "directive-selector": [true, "attribute", "nic", "camelCase"],
-    "component-selector": [true, "element", "nic", "kebab-case"],
+    "directive-selector": [true, "attribute", "nac", "camelCase"],
+    "component-selector": [true, "element", "nac", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

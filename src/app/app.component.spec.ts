@@ -1,12 +1,17 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {TestBed, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {AlertGeneratorComponent} from './alert-generator/alert-generator.component';
+import {By} from '@angular/platform-browser';
+import {AlertCenterModule} from './lib/alert-center/alert-center-module';
+import {FormsModule} from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent, AlertGeneratorComponent
       ],
+      imports: [AlertCenterModule, FormsModule]
     });
     TestBed.compileComponents();
   });
@@ -17,16 +22,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'nic works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('nic works!');
-  }));
-
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('nic works!');
+    const compiled = fixture.debugElement;
+    expect(compiled.query(By.directive(AlertGeneratorComponent))).toBeTruthy();
   }));
 });

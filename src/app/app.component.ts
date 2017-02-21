@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nic-root',
+  selector: 'nac-root',
   template: `
-  <h1>
-    {{title}}
-  </h1>
+    <nac-alert-generator></nac-alert-generator>
   `,
   styles: []
 })
 export class AppComponent {
-  title = 'nic works!';
+  title = 'nac works!';
 }

@@ -1,6 +1,6 @@
-import {InfoType} from "./info-type";
+import {AlertType} from './alert-type';
 
 export class Alert {
-  constructor(public info: string, public details: string = '', infoType: InfoType = InfoType.INFO) {
+  constructor(public alertType: AlertType, public text: string, public textStrong: string = '') {
   }
 }

@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {AlertCenterService} from './service/alert-center.service';
-import {InfocenterComponent} from './infocenter/infocenter.component';
-import {InfoComponent} from './info/info.component';
+import {AlertCenterComponent} from './alert-center/alert-center.component';
+import {AlertComponent} from './alert/alert.component';
 
 @NgModule({
-  declarations: [InfocenterComponent, InfoComponent],
+  declarations: [AlertCenterComponent, AlertComponent],
   providers: [AlertCenterService],
-  imports: [InfocenterComponent]
+  exports: [AlertCenterComponent]
 })
-export class InfocenterModule {
+export class AlertCenterModule {
 }

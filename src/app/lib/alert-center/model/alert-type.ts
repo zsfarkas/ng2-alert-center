@@ -1,3 +1,3 @@
-export enum InfoType {
-  INFO, WARN, ERROR
+export enum AlertType {
+  SUCCESS, INFO, WARNING, DANGER
 }
