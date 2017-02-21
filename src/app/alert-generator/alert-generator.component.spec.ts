@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlertGeneratorComponent } from './alert-generator.component';
-import {AlertCenterModule} from '../lib/alert-center/alert-center-module';
+import {AlertCenterModule} from '../alert-center/alert-center-module';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 

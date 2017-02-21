@@ -2,7 +2,7 @@ import {TestBed, async} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {AlertGeneratorComponent} from './alert-generator/alert-generator.component';
 import {By} from '@angular/platform-browser';
-import {AlertCenterModule} from './lib/alert-center/alert-center-module';
+import {AlertCenterModule} from './alert-center/alert-center-module';
 import {FormsModule} from '@angular/forms';
 
 describe('AppComponent', () => {
