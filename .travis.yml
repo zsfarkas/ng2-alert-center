@@ -1,4 +1,11 @@
 language: node_js
 node_js:
-  - "iojs"
-  - "6"
+- '7'
+deploy:
+  provider: npm
+  email: npm@farkas.land
+  api_key:
+    secure: PJL8xcTLBVf4NuqKmIoGKX4cwwA+yuv5BxHu6JvNNpL78OR1vZAiXQDWRv+ii8WtgD3tc6e5tNyyi/Xcu+/t4LvWzRvaG/Ije3FYGLSgsaH6gOv2p17voGGSSoGBJnwFKRDsDp1vY/8lppfbbyz5v1O8Sx/ohCFSrJntPn5KHffakwfKEHSYP5cOsYLdpyYRxR78RgV5Kv0PTdowtCWMsAuWOfIy+rulStR5Pl73NQp2PAegexg0ehgfCeQfcFXYZtk24WroNSJm9kMpJUSeGSBzmJoOWG8U/BNzqUN5QekhFjRTfG5bxkyLntao1QHaV2AMUz/ug+2xi9HM2+GnJxqPd8AZl0uxLe5Xl6cCqwn5q78bLPEtaAnXTuX/BC1bYSi4YQqwiCVNYNvbOGJYhjeNSD1J3aYYlMsSVXUxOOinQ0HaVo8qVB2BfV64Y7e0QfXCk0fuT9o0V88p18KfEoJFX3ZJK0Yp7gTp2ch8tdzw4kDf+TpTLqrIQfnzH0B9IiC6lFQAyXnNSH/2MtmefH64QPbsUmss1eNDzzwmkSyM4/xyto/0zEO9OBXRByAKLBhO6uk7g8IAdb7AVg/Jma+jG3SFolBn4Hgd4fqpY2pZEec+vLl5HP+PXHyY8tbrujMFTzhnYCyyoqRcJ3x8sRLEB26xifK18mFgnVdRC7Y=
+  on:
+    tags: true
+    repo: zsfarkas/ng2-alert-center
