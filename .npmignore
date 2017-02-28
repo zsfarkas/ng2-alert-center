@@ -1,6 +1,8 @@
-/src
-/dist
-/e2e
+src/
+demo/
+o-ri/
+node_modules/
+.idea/
 .gitignore
 .npmignore
 .editorconfig
@@ -9,3 +11,4 @@
 karma.conf.js
 protractor.conf.js
 tslint.json
+ng2-alert-center.iml
