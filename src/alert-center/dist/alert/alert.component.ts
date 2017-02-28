@@ -40,5 +40,4 @@ export class AlertComponent implements OnInit {
   isDanger() {
     return this.alert.alertType === AlertType.DANGER;
   }
-
 }

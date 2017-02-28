@@ -33,6 +33,10 @@ npm-debug.log
 testem.log
 /typings
 /o-ri
+/demo
+ng2-alert-center.d.ts
+ng2-alert-center.js
+
 
 # e2e
 /e2e/*.js

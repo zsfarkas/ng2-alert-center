@@ -5,11 +5,14 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -aot",
+    "start": "ng serve",
     "test": "ng test --singleRun=true",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build": "ng build -aot"
+    "build": "npm run build.clean && npm run build.compile && npm run build.demo",
+    "build.clean": "rm -rf dist && rm -rf demo && rm ng2-alert-center.d.ts ng2-alert-center.js",
+    "build.compile": "tsc -p src/alert-center/tsconfig.json",
+    "build.demo": "ng build"
   },
   "repository": "https://github.com/zsfarkas/ng2-alert-center.git",
   "private": false,

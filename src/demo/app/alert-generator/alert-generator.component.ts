@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AlertCenterService} from '../alert-center/service/alert-center.service';
-import {AlertType} from '../alert-center/model/alert-type';
-import {Alert} from '../alert-center/model/alert';
+import {AlertCenterService} from '../../../alert-center/dist/service/alert-center.service';
+import {AlertType} from '../../../alert-center/dist/model/alert-type';
+import {Alert} from '../../../alert-center/dist/model/alert';
 
 @Component({
   selector: 'nac-alert-generator',

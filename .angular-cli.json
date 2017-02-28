@@ -6,8 +6,8 @@
   },
   "apps": [
     {
-      "root": "src",
-      "outDir": "dist",
+      "root": "src/demo",
+      "outDir": "demo",
       "assets": [
         "assets",
         "favicon.ico"
@@ -36,12 +36,12 @@
   },
   "lint": [
     {
-      "files": "src/**/*.ts",
-      "project": "src/tsconfig.json"
+      "files": "src/demo/**/*.ts",
+      "project": "src/demo/tsconfig.json"
     },
     {
-      "files": "e2e/**/*.ts",
-      "project": "e2e/tsconfig.json"
+      "files": "src/e2e/**/*.ts",
+      "project": "src/e2e/tsconfig.json"
     }
   ],
   "test": {

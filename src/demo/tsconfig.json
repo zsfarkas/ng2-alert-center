@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": "",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -9,13 +12,10 @@
       "dom"
     ],
     "mapRoot": "./",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "outDir": "../dist/out-tsc",
+    "outDir": "../../demo/out-tsc",
     "sourceMap": true,
-    "target": "es5",
     "typeRoots": [
-      "../node_modules/@types"
+      "../../../node_modules/@types"
     ]
   }
 }
