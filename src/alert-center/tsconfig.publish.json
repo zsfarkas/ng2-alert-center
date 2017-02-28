@@ -20,10 +20,10 @@
     ]
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/app/alert-center/**/*.spec.ts"
   ],
   "files": [
-    "ng2-alert-center.ts",
-    "alert-center/**/*.ts"
+    "ng2-alert-center.ts"
   ]
 }
