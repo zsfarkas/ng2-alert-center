@@ -11,9 +11,7 @@ import {Alert} from '../model/alert';
   `,
   styles: [
     `
-      .alert-list {
-        position: fixed;
-      }
+
     `
   ]
 })
