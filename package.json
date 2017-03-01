@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build": "npm run build.clean && npm run build.compile",
-    "build.clean": "rm -rf dist && rm -rf demo && rm ng2-alert-center.d.ts ng2-alert-center.js",
+    "build.clean": "rm -rf dist && rm -rf demo && rm -f ng2-alert-center.d.ts ng2-alert-center.js",
     "build.compile": "tsc -p src/alert-center/tsconfig.publish.json",
     "build.demo": "ng build"
   },
