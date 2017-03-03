@@ -6,7 +6,7 @@ import {Alert} from '../model/alert';
   selector: 'nac-alert-center',
   template: `
     <div class="alert-list">
-      <nac-alert *ngFor="let alert of alerts" [alert]="alert"></nac-alert>
+      <nac-alert *ngFor="let alert of alerts" [alert]="alert" (dismissed)="remove(alert)"></nac-alert>
     </div>
   `,
   styles: [
@@ -22,8 +22,12 @@ export class AlertCenterComponent implements OnInit {
 
   ngOnInit() {
     this.alertCenterService.alerts.forEach((alert: Alert) => {
-      this.alerts.push(alert);
+      this.alerts.unshift(alert);
     });
+  }
+
+  remove(alert: Alert) {
+    this.alerts.splice(this.alerts.indexOf(alert), 1);
   }
 
 }

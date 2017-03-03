@@ -38,7 +38,7 @@ class Page {
   }
 
   getTextHTMLElement(): HTMLElement {
-    return this.fixture.nativeElement.querySelector('div.alert span');
+    return this.fixture.nativeElement.querySelector('div.alert > span');
   }
 
   getAlertHtmlElement(): HTMLElement {

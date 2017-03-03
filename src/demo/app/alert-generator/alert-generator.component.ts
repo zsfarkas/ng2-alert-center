@@ -28,6 +28,10 @@ import {Alert} from '../../../alert-center/dist/model/alert';
                 <input class="form-control" id="strong-text" type="text" name="strongText" [(ngModel)]="alert.textStrong">
               </div>
               <div class="form-group">
+                <label for="dismiss-time">Dismiss Time</label>
+                <input class="form-control" id="dismiss-time" type="text" name="dismissTime" [(ngModel)]="alert.dismissTime">
+              </div>
+              <div class="form-group">
                 <label class="radio-inline">
                   <input type="radio" name="alertType" [value]="0" [(ngModel)]="alert.alertType">SUCCESS
                 </label>
