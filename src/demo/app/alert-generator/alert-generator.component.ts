@@ -67,7 +67,7 @@ import {Alert} from '../../../alert-center/dist/model/alert';
 ` ]
 })
 export class AlertGeneratorComponent implements OnInit {
-  alert: Alert = new Alert(AlertType.INFO, 'Test alert.');
+  alert: Alert = new Alert(AlertType.SUCCESS, this.createTestMessage(), 'CALCULATION: ');
 
   constructor(private alertCenterService: AlertCenterService) {
   }
@@ -77,7 +77,7 @@ export class AlertGeneratorComponent implements OnInit {
 
   sendAlert() {
     this.alertCenterService.alert(this.alert);
-    this.alert = new Alert(this.alert.alertType, this.createTestMessage(), AlertType[this.alert.alertType] + ': ');
+    this.alert = new Alert(this.alert.alertType, this.createTestMessage(), this.alert.textStrong, this.alert.dismissTime);
   }
 
   private createTestMessage() {
