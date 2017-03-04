@@ -2,7 +2,7 @@
 
 Alert center provides an alert service and an alert component, you can include in your Angular 2 project.
 
-Currently it uses bootstrap 3 for styling. If you don't use bootstrap you can just use the bootstrap classes to apply your own styles.
+Currently it uses bootstrap 3 for styling. If you don't use bootstrap, you can just use the bootstrap classes to apply your own styles.
 
 ## Install
 
@@ -30,7 +30,7 @@ export MyComponent {
     this.service.alert(alert);
   }
   
-  /* Let the alert disapear by itself in 5 seconds */
+  /* Let the alert disappear by itself in 5 seconds */
   sendAnAutoDismissingAlert() {
     const alert = new Alert(AlertType.INFO, 'Auto dismissing test alert.', '', 5000);
 
@@ -41,10 +41,10 @@ export MyComponent {
 
 ## Roadmap
 
-Please consider that this module is under development. Following features are comming:
+Please consider, that this module is under development. Following features are coming:
 
 * Animation for appearing and disappearing
-* Support for i18n
-* Links in alerts
 * Interactive show case
+* Links in alerts
+* Support for i18n
 * More tests
