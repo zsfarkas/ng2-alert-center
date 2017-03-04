@@ -16,7 +16,6 @@ import {AlertType} from '../model/alert-type';
       <strong>{{alert.textStrong}}</strong><span>{{alert.text}}</span>
     </div>
   `,
-  styles: []
 })
 export class AlertComponent implements OnInit {
 
