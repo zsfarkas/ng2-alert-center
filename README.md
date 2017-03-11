@@ -39,12 +39,17 @@ export MyComponent {
 }
 ```
 
+## Show case
+
+You can test the module online:
+
+* https://ng2-alert-center-demo.cfapps.io
+
 ## Roadmap
 
 Please consider, that this module is under development. Following features are coming:
 
 * Animation for appearing and disappearing
-* Interactive show case
 * Links in alerts
 * Support for i18n
 * More tests

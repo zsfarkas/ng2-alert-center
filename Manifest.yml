@@ -1,0 +1,8 @@
+applications:
+- name: ng2-alert-center-demo
+  instances: 1
+  memory: 8M
+  disk_quota: 16M
+  routes:
+  - route: ng2-alert-center-demo.cfapps.io
+  stack: cflinuxfs2
