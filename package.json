@@ -12,7 +12,7 @@
     "build": "npm run build.clean && npm run build.compile && npm run build.demo",
     "build.clean": "rm -rf dist && rm -rf demo && rm -f ng2-alert-center.d.ts ng2-alert-center.js",
     "build.compile": "tsc -p src/alert-center/tsconfig.publish.json",
-    "build.demo": "ng build -prod"
+    "build.demo": "ng build"
   },
   "keywords": [
     "ng",
