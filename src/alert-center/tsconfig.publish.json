@@ -10,7 +10,7 @@
       "es2016",
       "dom"
     ],
-    "sourceMap": false,
+    "sourceMap": true,
     "noEmitHelpers": false,
     "noImplicitAny": true,
     "declaration": true,
