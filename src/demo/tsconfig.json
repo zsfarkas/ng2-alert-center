@@ -11,11 +11,15 @@
       "es2016",
       "dom"
     ],
+    "types": [
+      "jasmine",
+      "node"
+    ],
     "mapRoot": "./",
     "outDir": "../../demo/out-tsc",
     "sourceMap": true,
     "typeRoots": [
-      "../../../node_modules/@types"
+      "../../node_modules/@types"
     ]
   }
 }

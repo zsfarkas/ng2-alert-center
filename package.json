@@ -10,9 +10,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build": "npm run build.clean && npm run build.compile && npm run build.demo",
-    "build.clean": "rm -rf dist && rm -rf demo && rm -f index.d.ts index.js",
-    "build.compile": "tsc -p src/alert-center/tsconfig.publish.json",
-    "build.demo": "ng build"
+    "build.clean": "rm -rf alert-center && rm -rf demo && rm -f index.ts",
+    "build.compile": "cp -r src/demo/app/modules/* .",
+    "build.demo": "ng build -aot -prod"
   },
   "keywords": [
     "ng",

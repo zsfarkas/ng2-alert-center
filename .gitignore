@@ -34,12 +34,14 @@ testem.log
 /typings
 /o-ri
 /demo
-ng2-alert-center.d.ts
-ng2-alert-center.js
-index.d.ts
-index.js
+/ng2-alert-center.d.ts
+/ng2-alert-center.js
+/index.d.ts
+/index.js
 /src/**/*.js
 /src/**/*.d.ts
+/alert-center/
+/index.ts
 
 # e2e
 /e2e/*.js

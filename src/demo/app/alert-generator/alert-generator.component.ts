@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AlertCenterService} from '../../../alert-center/dist/service/alert-center.service';
-import {AlertType} from '../../../alert-center/dist/model/alert-type';
-import {Alert} from '../../../alert-center/dist/model/alert';
+import {AlertCenterService} from '../modules';
+import {AlertType} from '../modules';
+import {Alert} from '../modules';
 
 @Component({
   selector: 'nac-alert-generator',
@@ -67,7 +67,7 @@ import {Alert} from '../../../alert-center/dist/model/alert';
 ` ]
 })
 export class AlertGeneratorComponent implements OnInit {
-  alert: Alert = new Alert(AlertType.SUCCESS, this.createTestMessage(), 'CALCULATION: ');
+  alert: Alert = new Alert(AlertType.SUCCESS, AlertGeneratorComponent.createTestMessage(), 'CALCULATION: ');
 
   constructor(private alertCenterService: AlertCenterService) {
   }
@@ -77,18 +77,18 @@ export class AlertGeneratorComponent implements OnInit {
 
   sendAlert() {
     this.alertCenterService.alert(this.alert);
-    this.alert = new Alert(this.alert.alertType, this.createTestMessage(), this.alert.textStrong, this.alert.dismissTime);
+    this.alert = new Alert(this.alert.alertType, AlertGeneratorComponent.createTestMessage(), this.alert.textStrong, this.alert.dismissTime);
   }
 
-  private createTestMessage() {
-    const a = this.createRandomNumberBetweenNullAndTentausend();
-    const b = this.createRandomNumberBetweenNullAndTentausend();
+  private static createTestMessage() {
+    const a = AlertGeneratorComponent.createRandomNumberBetweenNullAndTentausend();
+    const b = AlertGeneratorComponent.createRandomNumberBetweenNullAndTentausend();
 
 
     return 'The result of new calculation is ' + a + ' + ' + b + ' = ' + (a + b) + '.';
   }
 
-  private createRandomNumberBetweenNullAndTentausend() {
+  private static createRandomNumberBetweenNullAndTentausend() {
     return Math.round(Math.random() * 10000);
   }
 
