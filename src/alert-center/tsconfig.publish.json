@@ -24,6 +24,6 @@
     "src/app/alert-center/**/*.spec.ts"
   ],
   "files": [
-    "ng2-alert-center.ts"
+    "index.ts"
   ]
 }

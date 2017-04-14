@@ -23,7 +23,7 @@
     "node_modules"
   ],
   "files": [
-    "ng2-alert-center.ts",
+    "index.ts",
     "alert-center/**/*.ts"
   ]
 }

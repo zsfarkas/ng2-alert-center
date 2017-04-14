@@ -36,6 +36,8 @@ testem.log
 /demo
 ng2-alert-center.d.ts
 ng2-alert-center.js
+index.d.ts
+index.js
 /src/**/*.js
 /src/**/*.d.ts
 
