@@ -32,9 +32,9 @@
   "private": false,
   "dependencies": {},
   "peerDependencies": {
-    "@angular/common": "^2.4.0",
-    "@angular/compiler": "^2.4.0",
-    "@angular/core": "^2.4.0",
+    "@angular/common": "*",
+    "@angular/compiler": "*",
+    "@angular/core": "*",
     "bootstrap": "^3.3.7",
     "rxjs": "^5.1.0"
   },
