@@ -12,3 +12,6 @@ karma.conf.js
 protractor.conf.js
 tslint.json
 ng2-alert-center.iml
+manifest.yml
+Staticfile
+.cfignore
