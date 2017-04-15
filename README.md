@@ -10,12 +10,14 @@ Currently it uses bootstrap 3 for styling. If you don't use bootstrap, you can j
 
 ## Usage
 
+Hopefully, it is easy to understand by this example, how to use this module. Refer the API description for further information.    
+
 ```
 @Component({
   template: `
     <!-- Insert the alert center component once in your body /-->
     <div class="my-alert-center-style>
-      <nac-alert-center></nac-alert-center>
+      <nac-alert-center animation="'fancy'"></nac-alert-center>
     </div>
   `
 })
@@ -49,7 +51,62 @@ You can test the module online:
 
 Please consider, that this module is under development. Following features are coming:
 
-* Animation for appearing and disappearing
 * Links in alerts
 * Support for i18n
 * More tests
+
+## API
+
+### Component `<nac-alert-center>`
+
+Use this component to define the pla`ce, where alerts appear in your application. You can use individual styles for the positioning.
+
+#### Inputs:
+
+`animation`: 
+
+* it defines the enabled animation of appearing disappering of alerts. 
+* possible values: `'none'`, `'decent'`, `'fancy'`
+* default: `'none'`
+
+### Injectable Service `AlertCenterService`
+
+Inject this class in your components, which you want to send an alert from. 
+
+#### Properties
+
+`alerts: Observable<Alert>`
+
+The component `<nac-alert-center>` will be informed via this observable, if an alert was sent.
+
+#### Methods:
+
+`alert (anAlert: Alert): void`
+
+Informs the observing components about a new alert. 
+
+### Model class `Alert`
+
+Represents an alert, which will be displayed by the component `<nac-alert-center>`.
+
+#### Properties:
+
+`alertType: AlertType`
+
+default: none
+
+`text: string`
+
+default: none
+
+`textStrong: string`
+
+default: `''`
+
+`dismissTime: number`
+
+default: 0
+
+#### Methods:
+
+`constructor (alertType: AlertType, text: string, textStrong = '', dismissType = 0)`
