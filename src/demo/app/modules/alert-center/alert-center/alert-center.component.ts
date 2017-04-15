@@ -1,4 +1,5 @@
-import {Component, OnInit, trigger, transition, style, animate} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {trigger, transition, style, animate, state} from '@angular/animations';
 import {AlertCenterService} from '../service/alert-center.service';
 import {Alert} from '../model/alert';
 
@@ -6,18 +7,20 @@ import {Alert} from '../model/alert';
   selector: 'nac-alert-center',
   template: `
     <div class="alert-list">
-      <nac-alert *ngFor="let alert of getAlerts()" [alert]="alert" (dismissed)="remove(alert)"></nac-alert>
-      <!--nac-alert *ngFor="let alert of alerts" [@inOut] [alert]="alert" (dismissed)="remove(alert)"></nac-alert-->
+      <div *ngFor="let alert of getAlerts()" [@flyInOut]="'in'" >
+        <nac-alert [alert]="alert" (dismissed)="remove(alert)"></nac-alert>
+      </div>
     </div>
   `,
   animations: [
-    trigger('inOut', [
-      //state('in', style({transform: 'scale(1.0)'})),
-      transition('void => *', [
-        animate(500, style({transform: 'scale(1.0)'}))
+    trigger('flyInOut', [
+      state('in', style([{transform: 'translateX(0)'}, {opacity: 1}, {maxHeight: 300}])),
+      transition(':enter', [
+        style({opacity: 0, maxHeight: 0, transform: 'translateY(-100%)'}),
+        animate('300ms ease-in-out')
       ]),
-      transition('* => void', [
-        animate(500, style({transform: 'scale(0.0)'}))
+      transition(':leave', [
+        animate('300ms ease-in-out', style({transform: 'translateX(100%)', height: 0, opacity: 0}))
       ])
     ])
   ]

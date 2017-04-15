@@ -15,8 +15,7 @@ import {AlertType} from '../model/alert-type';
       </button>
       <strong>{{alert.textStrong}}</strong><span>{{alert.text}}</span>
     </div>
-  `,
-})
+  `})
 export class AlertComponent implements OnInit {
 
   @Input() alert = new Alert(AlertType.INFO, '', '');
