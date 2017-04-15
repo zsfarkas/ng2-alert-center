@@ -1,6 +1,7 @@
 # Ng2AlertCenter
 
 [![Build Status](https://travis-ci.org/zsfarkas/ng2-alert-center.svg?branch=master)](https://travis-ci.org/zsfarkas/ng2-alert-center)
+
 [![NPM](https://nodei.co/npm/ng2-alert-center.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/ng2-alert-center)
 [![NPM](https://nodei.co/npm-dl/ng2-alert-center.png?height=3&months=6)](https://npmjs.org/ng2-alert-center)
 
