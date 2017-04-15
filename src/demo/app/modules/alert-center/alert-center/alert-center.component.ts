@@ -1,26 +1,38 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {trigger, transition, style, animate, state} from '@angular/animations';
 import {AlertCenterService} from '../service/alert-center.service';
 import {Alert} from '../model/alert';
+
+
+type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
 
 @Component({
   selector: 'nac-alert-center',
   template: `
     <div class="alert-list">
-      <div *ngFor="let alert of getAlerts()" [@flyInOut]="'in'" >
+      <div *ngFor="let alert of getAlerts()" [@animation]="getAnimation()" >
         <nac-alert [alert]="alert" (dismissed)="remove(alert)"></nac-alert>
       </div>
     </div>
   `,
   animations: [
-    trigger('flyInOut', [
-      state('in', style([{transform: 'translateX(0)'}, {opacity: 1}, {maxHeight: 300}])),
-      transition(':enter', [
+    trigger('animation', [
+      state('none', style({})),
+      state('decent', style([{opacity: 1}, {maxHeight: 300}])),
+      state('fancy', style([{transform: 'translateX(0)'},{transform: 'translateY(0)'}, {opacity: 1}, {maxHeight: 300}])),
+      transition('void => fancy', [
         style({opacity: 0, maxHeight: 0, transform: 'translateY(-100%)'}),
         animate('300ms ease-in-out')
       ]),
-      transition(':leave', [
-        animate('300ms ease-in-out', style({transform: 'translateX(100%)', height: 0, opacity: 0}))
+      transition('fancy => void', [
+        animate('300ms ease-in-out', style({transform: 'translateX(100%)', maxHeight: 0, opacity: 0}))
+      ]),
+      transition('void => decent', [
+        style({opacity: 0, maxHeight: 0}),
+        animate('300ms ease-in-out')
+      ]),
+      transition('decent => void', [
+        animate('300ms ease-in-out', style({maxHeight: 0, opacity: 0}))
       ])
     ])
   ]
@@ -28,12 +40,12 @@ import {Alert} from '../model/alert';
 export class AlertCenterComponent implements OnInit {
   private alerts: Alert[] = [];
 
+  @Input() animation: ANIMATION_TYPE = 'none';
+
   constructor(private alertCenterService: AlertCenterService) { }
 
   ngOnInit() {
-    this.alertCenterService.alerts.forEach((alert: Alert) => {
-      this.alerts.unshift(alert);
-    });
+    this.observeAlerts();
   }
 
   getAlerts(): Alert[] {
@@ -44,4 +56,13 @@ export class AlertCenterComponent implements OnInit {
     this.alerts.splice(this.alerts.indexOf(alert), 1);
   }
 
+  getAnimation(): string {
+    return this.animation;
+  }
+
+  private observeAlerts() {
+    this.alertCenterService.alerts.forEach((alert: Alert) => {
+      this.alerts.unshift(alert);
+    });
+  }
 }

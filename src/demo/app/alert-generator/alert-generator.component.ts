@@ -7,7 +7,7 @@ import {Alert} from '../modules';
   selector: 'nac-alert-generator',
   template: `
 <div class="alert-container">
-  <nac-alert-center></nac-alert-center>
+  <nac-alert-center [animation]="'fancy'"></nac-alert-center>
 </div>
 <div class="container">
   <br><br>
