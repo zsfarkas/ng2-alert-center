@@ -15,3 +15,4 @@ ng2-alert-center.iml
 manifest.yml
 Staticfile
 .cfignore
+tsconfig.json
