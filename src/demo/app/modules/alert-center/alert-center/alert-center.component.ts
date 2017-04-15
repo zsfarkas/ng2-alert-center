@@ -25,14 +25,14 @@ type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
         animate('300ms ease-in-out')
       ]),
       transition('fancy => void', [
-        animate('300ms ease-in-out', style({transform: 'translateX(100%)', maxHeight: 0, opacity: 0}))
+        animate('300ms ease-in-out', style({transform: 'translateX(100%)', height: 0, opacity: 0}))
       ]),
       transition('void => decent', [
         style({opacity: 0, maxHeight: 0}),
         animate('300ms ease-in-out')
       ]),
       transition('decent => void', [
-        animate('300ms ease-in-out', style({maxHeight: 0, opacity: 0}))
+        animate('300ms ease-in-out', style({height: 0, opacity: 0}))
       ])
     ])
   ]
