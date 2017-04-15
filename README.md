@@ -1,4 +1,4 @@
-# Ng2AlertCenter
+# ng2-alert-center
 
 [![Build Status](https://travis-ci.org/zsfarkas/ng2-alert-center.svg?branch=master)](https://travis-ci.org/zsfarkas/ng2-alert-center)
 
