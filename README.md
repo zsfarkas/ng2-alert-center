@@ -1,13 +1,15 @@
 # ng2-alert-center
 
+Alert center provides an alert service and an alert component, you can include in your Angular 2 project.
+
+Currently it uses bootstrap 3 for styling. If you don't use bootstrap, you can just use the bootstrap classes to apply your own styles.
+
+## Status
+
 [![Build Status](https://travis-ci.org/zsfarkas/ng2-alert-center.svg?branch=master)](https://travis-ci.org/zsfarkas/ng2-alert-center)
 
 [![NPM](https://nodei.co/npm/ng2-alert-center.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/ng2-alert-center)
 [![NPM](https://nodei.co/npm-dl/ng2-alert-center.png?height=3&months=6)](https://npmjs.org/ng2-alert-center)
-
-Alert center provides an alert service and an alert component, you can include in your Angular 2 project.
-
-Currently it uses bootstrap 3 for styling. If you don't use bootstrap, you can just use the bootstrap classes to apply your own styles.
 
 ## Install
 
