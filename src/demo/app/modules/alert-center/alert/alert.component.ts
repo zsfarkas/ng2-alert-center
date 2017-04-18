@@ -55,7 +55,7 @@ export class AlertComponent implements OnInit {
 
   private initTimerIfNeeded() {
     if (this.alert.isAutoDismissing()) {
-      setTimeout(() => this.dismiss(), this.alert.dismissTime);
+      setTimeout(() => this.dismiss(), this.alert.autoDismissTime);
     }
   }
 }

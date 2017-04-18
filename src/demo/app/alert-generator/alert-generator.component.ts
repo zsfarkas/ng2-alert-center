@@ -23,15 +23,16 @@ import {Alert} from '../modules';
                 <label for="alert-text">Alert text (text)</label>
                 <input class="form-control" id="alert-text" type="text" name="alertText" [(ngModel)]="alert.text">
               </div>
-              <div class="form-group">
-                <label for="strong-text">Strong text (textStrong)</label>
-                <input class="form-control" id="strong-text" type="text" name="strongText" [(ngModel)]="alert.textStrong">
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="strong-text">Strong text (textStrong)</label>
+                  <input class="form-control" id="strong-text" type="text" name="strongText" [(ngModel)]="alert.textStrong">
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="auto-dismiss-time">Auto dismiss time (autoDismissTime)</label>
+                  <input class="form-control" id="auto-dismiss-time" type="text" name="autoDismissTime" [(ngModel)]="alert.autoDismissTime">
+                </div>
               </div>
-              <div class="form-group">
-                <label for="dismiss-time">Dismiss Time (dismissTime)</label>
-                <input class="form-control" id="dismiss-time" type="text" name="dismissTime" [(ngModel)]="alert.dismissTime">
-              </div>
-              <label>Alert type (AlertType)</label>
               <div class="form-group">
                 <label class="radio-inline">
                   <input type="radio" name="alertType" [value]="0" [(ngModel)]="alert.alertType">SUCCESS
@@ -44,6 +45,11 @@ import {Alert} from '../modules';
                 </label>
                 <label class="radio-inline">
                   <input type="radio" name="alertType" [value]="3" [(ngModel)]="alert.alertType">DANGER
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input id="dismissable" type="checkbox" name="dismissable" [(ngModel)]="alert.dismissable">Dismissable (dismissable)
                 </label>
               </div>
               <hr>
@@ -93,7 +99,7 @@ import {Alert} from '../modules';
 ` ]
 })
 export class AlertGeneratorComponent implements OnInit {
-  alert: Alert = new Alert(AlertType.SUCCESS, AlertGeneratorComponent.createTestMessage(), 'CALCULATION: ');
+  alert: Alert = new Alert(AlertType.SUCCESS, AlertGeneratorComponent.createTestText(), AlertGeneratorComponent.createTestTextStrong(), 5000);
 
   animation = 'fancy';
   align = 2;
@@ -106,7 +112,7 @@ export class AlertGeneratorComponent implements OnInit {
 
   sendAlert() {
     this.alertCenterService.alert(this.alert);
-    this.alert = new Alert(this.alert.alertType, AlertGeneratorComponent.createTestMessage(), this.alert.textStrong, this.alert.dismissTime);
+    this.alert = new Alert(this.alert.alertType, this.alert.text, this.alert.textStrong, this.alert.autoDismissTime, this.alert.dismissable);
   }
 
   getLeft() {
@@ -131,15 +137,11 @@ export class AlertGeneratorComponent implements OnInit {
     }
   }
 
-  private static createTestMessage() {
-    const a = AlertGeneratorComponent.createRandomNumberBetweenNullAndTentausend();
-    const b = AlertGeneratorComponent.createRandomNumberBetweenNullAndTentausend();
-
-
-    return 'The result of new calculation is ' + a + ' + ' + b + ' = ' + (a + b) + '.';
+  private static createTestText() {
+    return 'sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex...';
   }
 
-  private static createRandomNumberBetweenNullAndTentausend() {
-    return Math.round(Math.random() * 10000);
+  private static createTestTextStrong() {
+    return 'Lorem ipsum dolor ';
   }
 }

@@ -66,7 +66,7 @@ Please consider, that this module is under development. Following features are c
 
 ### Component `<nac-alert-center>`
 
-Use this component to define the pla`ce, where alerts appear in your application. You can use individual styles for the positioning.
+Use this component to define the place, where alerts appear in your application. You can use individual styles for the positioning.
 
 #### Inputs:
 
@@ -110,9 +110,13 @@ default: none
 
 default: `''`
 
-`dismissTime: number`
+`autoDismissTime: number`
 
-default: 0
+default: `0`
+
+`dismissable: boolean`
+
+default: `true`
 
 #### Methods:
 

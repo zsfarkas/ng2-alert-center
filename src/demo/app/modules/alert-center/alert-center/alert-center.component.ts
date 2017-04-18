@@ -53,7 +53,9 @@ export class AlertCenterComponent implements OnInit {
   }
 
   remove(alert: Alert) {
-    this.alerts.splice(this.alerts.indexOf(alert), 1);
+    if(this.alerts.indexOf(alert) >= 0) {
+      this.alerts.splice(this.alerts.indexOf(alert), 1);
+    }
   }
 
   getAnimation(): string {
