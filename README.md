@@ -52,7 +52,7 @@ export MyComponent {
 
 You can test the module online:
 
-* https://ng2-alert-center-demo.farkas.land
+* http://ng2-alert-center-demo.farkas.land
 
 ## Roadmap
 
