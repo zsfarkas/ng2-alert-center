@@ -99,10 +99,24 @@ import {Alert} from '../modules';
 ` ]
 })
 export class AlertGeneratorComponent implements OnInit {
-  alert: Alert = new Alert(AlertType.SUCCESS, AlertGeneratorComponent.createTestText(), AlertGeneratorComponent.createTestTextStrong(), 5000);
+  alert: Alert = new Alert (
+    AlertType.SUCCESS,
+    AlertGeneratorComponent.createTestText(),
+    AlertGeneratorComponent.createTestTextStrong(),
+    5000
+  );
 
   animation = 'fancy';
   align = 2;
+
+  private static createTestText() {
+    return 'sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. ' +
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex...';
+  }
+
+  private static createTestTextStrong() {
+    return 'Lorem ipsum dolor ';
+  }
 
   constructor(private alertCenterService: AlertCenterService) {
   }
@@ -112,7 +126,13 @@ export class AlertGeneratorComponent implements OnInit {
 
   sendAlert() {
     this.alertCenterService.alert(this.alert);
-    this.alert = new Alert(this.alert.alertType, this.alert.text, this.alert.textStrong, this.alert.autoDismissTime, this.alert.dismissable);
+    this.alert = new Alert (
+      this.alert.alertType,
+      this.alert.text,
+      this.alert.textStrong,
+      this.alert.autoDismissTime,
+      this.alert.dismissable
+    );
   }
 
   getLeft() {
@@ -135,13 +155,5 @@ export class AlertGeneratorComponent implements OnInit {
       case 2:
         return '0';
     }
-  }
-
-  private static createTestText() {
-    return 'sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex...';
-  }
-
-  private static createTestTextStrong() {
-    return 'Lorem ipsum dolor ';
   }
 }

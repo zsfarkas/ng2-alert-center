@@ -19,7 +19,7 @@ type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
     trigger('animation', [
       state('none', style({})),
       state('decent', style([{opacity: 1}, {maxHeight: 300}])),
-      state('fancy', style([{transform: 'translateX(0)'},{transform: 'translateY(0)'}, {opacity: 1}, {maxHeight: 300}])),
+      state('fancy', style([{transform: 'translateX(0)'}, {transform: 'translateY(0)'}, {opacity: 1}, {maxHeight: 300}])),
       transition('void => fancy', [
         style({opacity: 0, maxHeight: 0, transform: 'translateY(-100%)'}),
         animate('300ms ease-in-out')
@@ -53,7 +53,7 @@ export class AlertCenterComponent implements OnInit {
   }
 
   remove(alert: Alert) {
-    if(this.alerts.indexOf(alert) >= 0) {
+    if (this.alerts.indexOf(alert) >= 0) {
       this.alerts.splice(this.alerts.indexOf(alert), 1);
     }
   }
