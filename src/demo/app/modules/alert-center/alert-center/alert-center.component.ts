@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {trigger, transition, style, animate, state} from '@angular/animations';
 import {AlertCenterService} from '../service/alert-center.service';
 import {Alert} from '../model/alert';
-
+import {Subscription} from 'rxjs/Subscription';
 
 type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
 
@@ -11,7 +11,7 @@ type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
   template: `
     <div class="alert-list">
       <div *ngFor="let alert of getAlerts()" [@animation]="getAnimation()" >
-        <nac-alert [alert]="alert" (dismissed)="remove(alert)"></nac-alert>
+        <nac-alert [alert]="alert" [htmlTextEnabled]="htmlTextEnabled" (dismissed)="remove(alert)"></nac-alert>
       </div>
     </div>
   `,
@@ -37,15 +37,23 @@ type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
     ])
   ]
 })
-export class AlertCenterComponent implements OnInit {
-  private alerts: Alert[] = [];
-
+export class AlertCenterComponent implements OnInit, OnDestroy {
   @Input() animation: ANIMATION_TYPE = 'none';
+  @Input() htmlTextEnabled = false;
+
+  private alerts: Alert[] = [];
+  private alertSubscription: Subscription;
 
   constructor(private alertCenterService: AlertCenterService) { }
 
   ngOnInit() {
-    this.observeAlerts();
+    this.alertSubscription = this.alertCenterService.alerts.subscribe((alert: Alert) => {
+      this.alerts.unshift(alert);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.alertSubscription.unsubscribe();
   }
 
   getAlerts(): Alert[] {
@@ -62,9 +70,4 @@ export class AlertCenterComponent implements OnInit {
     return this.animation;
   }
 
-  private observeAlerts() {
-    this.alertCenterService.alerts.forEach((alert: Alert) => {
-      this.alerts.unshift(alert);
-    });
-  }
 }

@@ -1,6 +1,11 @@
 import {AlertType} from './alert-type';
 
 export class Alert {
+
+  static create(alertType: AlertType, text: string, autoDismissTime = 0, dismissable = true) {
+    return new Alert(alertType, text, '', autoDismissTime, dismissable);
+  }
+
   constructor(
     public alertType: AlertType,
     public text: string,

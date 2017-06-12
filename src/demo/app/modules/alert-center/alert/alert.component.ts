@@ -13,12 +13,15 @@ import {AlertType} from '../model/alert-type';
       <button *ngIf="isDismissEnabled()" type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="dismiss()">
         <span aria-hidden="true">&times;</span>
       </button>
-      <strong>{{alert.textStrong}}</strong><span>{{alert.text}}</span>
+      <strong *ngIf="isTextStrongDefined()">{{alert.textStrong}}</strong><span *ngIf="!htmlTextEnabled">{{alert.text}}</span>
+      <span *ngIf="htmlTextEnabled" [innerHtml]="alert.text"></span>
     </div>
   `})
 export class AlertComponent implements OnInit {
 
   @Input() alert = new Alert(AlertType.INFO, '', '');
+
+  @Input() htmlTextEnabled = false;
 
   @Output() dismissed = new EventEmitter();
 
@@ -51,6 +54,10 @@ export class AlertComponent implements OnInit {
 
   isDismissEnabled() {
     return this.alert.isDismissable();
+  }
+
+  isTextStrongDefined() {
+    return this.alert.textStrong && this.alert.textStrong.length > 0;
   }
 
   private initTimerIfNeeded() {

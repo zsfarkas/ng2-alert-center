@@ -1,3 +1,5 @@
+/* tslint:disable:max-line-length */
+
 import {Component, OnInit} from '@angular/core';
 import {AlertCenterService} from '../modules';
 import {AlertType} from '../modules';
@@ -7,7 +9,7 @@ import {Alert} from '../modules';
   selector: 'nac-alert-generator',
   template: `
 <div class="alert-container" [style.left]="getLeft()" [style.right]="getRight()">
-  <nac-alert-center [animation]="animation"></nac-alert-center>
+  <nac-alert-center [animation]="animation" [htmlTextEnabled]="htmlTextEnabled"></nac-alert-center>
 </div>
 <div class="container">
   <br><br>
@@ -65,6 +67,13 @@ import {Alert} from '../modules';
                   <input type="radio" name="animation" [value]="'fancy'" [(ngModel)]="animation">Fancy animation ('fancy')
                 </label>
               </div>
+              <hr>
+              <div class="checkbox">
+                <label>
+                  <input id="htmlTextEnabled" type="checkbox" name="htmlTextEnabled" [(ngModel)]="htmlTextEnabled">Allow to write html into alert text (htmlTextEnabled)
+                </label>
+              </div>
+              <hr>
               <label>Alert center alignment</label>
               <div class="form-group">
                 <label class="radio-inline">
@@ -108,6 +117,7 @@ export class AlertGeneratorComponent implements OnInit {
 
   animation = 'fancy';
   align = 2;
+  htmlTextEnabled = false;
 
   private static createTestText() {
     return 'sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. ' +

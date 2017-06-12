@@ -72,9 +72,15 @@ Use this component to define the place, where alerts appear in your application.
 
 `animation`: 
 
-* it defines the enabled animation of appearing disappering of alerts. 
+* it defines the enabled animation of appearing disappearing of alerts. 
 * possible values: `'none'`, `'decent'`, `'fancy'`
 * default: `'none'`
+
+`htmlTextEnabled`:
+
+* set it `true` to enable html in alert text.
+* possible values: `true|false`
+* default: `false`
 
 ### Injectable Service `AlertCenterService`
 
