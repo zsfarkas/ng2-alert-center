@@ -22,9 +22,9 @@ Hopefully, it is easy to understand by this example, how to use this module. Ref
 ```
 @Component({
   template: `
-    <!-- Insert the alert center component once in your body /-->
+    <!-- Insert the alert center component once into your html body /-->
     <div class="my-alert-center-style>
-      <nac-alert-center animation="'fancy'"></nac-alert-center>
+      <nac-alert-center [animation]="'fancy'" [htmlTextEnabled]="true"></nac-alert-center>
     </div>
   `
 })
@@ -41,7 +41,7 @@ export MyComponent {
   
   /* Let the alert disappear by itself in 5 seconds */
   sendAnAutoDismissingAlert() {
-    const alert = new Alert(AlertType.INFO, 'Auto dismissing test alert.', '', 5000);
+    const alert = Alert.create(AlertType.INFO, 'Auto dismissing <b>test alert</b>.', 5000);
 
     this.service.alert(alert);
   }
