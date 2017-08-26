@@ -17,3 +17,6 @@ Staticfile
 tsconfig.json
 coverage/
 npm-package/
+rollup.config.js
+src/
+e2e/
