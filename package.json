@@ -5,14 +5,18 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "test": "ng test --singleRun=true",
+    "start": "ng serve -aot -prod",
+    "test": "npm run clean && ng lint && ng test --singleRun=true --code-coverage=true",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build": "npm run build.clean && npm run build.compile && npm run build.demo",
-    "build.clean": "rm -rf alert-center && rm -rf demo && rm -f index.ts",
-    "build.compile": "cp -r src/app/modules/* .",
-    "build.demo": "ng build -aot -prod"
+    "build": "npm run clean && npm run build.demo && npm run build.modules && npm run clean.modules.generates",
+    "build.modules": "ngc -p ./src/tsconfig.modules.json",
+    "build.demo": "ng build -aot -prod",
+    "clean": "npm run clean.demo && npm run clean.modules",
+    "clean.demo": "rm -rf demo",
+    "clean.modules": "npm run clean.modules.compilates && npm run clean.modules.generates",
+    "clean.modules.compilates": "rm -rf alert-center && rm -f index.*",
+    "clean.modules.generates": "find ./src -name '*.ngfactory.ts' -delete && find ./src -name '*.ngsummary.json' -delete && rm -rf ./src/node_modules"
   },
   "keywords": [
     "ng",

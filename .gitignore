@@ -50,3 +50,8 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+/**/*.ngsummary.json
+/**/*.ngfactory.ts
+/src/node_modules
+index.*

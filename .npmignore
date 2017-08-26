@@ -16,3 +16,4 @@ manifest.yml
 Staticfile
 .cfignore
 tsconfig.json
+coverage/
