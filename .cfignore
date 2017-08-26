@@ -8,3 +8,4 @@ src
 ng2-*.*
 package.json
 tslint.json
+npm-package/

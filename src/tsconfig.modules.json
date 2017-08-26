@@ -1,10 +1,26 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
     "outDir": "../",
     "baseUrl": "./",
-    "module": "es2015",
-    "types": []
+    "types": [],
+    "sourceMap":   true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
   },
   "files": [
     "./app/modules/index.ts"
@@ -12,5 +28,9 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true
+  }
 }

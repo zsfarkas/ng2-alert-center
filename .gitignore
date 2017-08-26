@@ -55,3 +55,4 @@ Thumbs.db
 /**/*.ngfactory.ts
 /src/node_modules
 index.*
+npm-package/

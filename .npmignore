@@ -1,4 +1,3 @@
-src/
 demo/
 o-ri/
 node_modules/
@@ -17,3 +16,4 @@ Staticfile
 .cfignore
 tsconfig.json
 coverage/
+npm-package/

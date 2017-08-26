@@ -4,7 +4,7 @@ import {AlertCenterService} from '../service/alert-center.service';
 import {Alert} from '../model/alert';
 import {Subscription} from 'rxjs/Subscription';
 
-type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
+export type ANIMATION_TYPE = 'none' | 'decent'| 'fancy';
 
 @Component({
   selector: 'nac-alert-center',

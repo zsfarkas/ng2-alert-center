@@ -5,6 +5,7 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {AlertCenterModule} from './modules/alert-center/alert-center.module';
 import {AlertGeneratorComponent} from './alert-generator/alert-generator.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {AlertGeneratorComponent} from './alert-generator/alert-generator.compone
     BrowserModule,
     FormsModule,
     HttpModule,
-    AlertCenterModule
+    AlertCenterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
