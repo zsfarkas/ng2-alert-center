@@ -17,7 +17,7 @@ import {Alert} from '../modules';
     <div class="col-sm-8 col-sm-offset-2">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h1>Create and send an alert</h1>  
+          <h1>Create and send an alert</h1>
         </div>
         <div class="panel-body">
             <form>
@@ -91,19 +91,18 @@ import {Alert} from '../modules';
         <div class="panel-footer">
             <button class="btn btn-primary" (click)="sendAlert()">Send alert</button>
         </div>
-      </div>      
-    </div>      
+      </div>
+    </div>
   </div>
 </div>
   `,
   styles: [`
 .alert-container {
- position: fixed;
- left: 60%;
- right: 0;
- z-index: 100;
- margin: 20px 20px 20px 20px;
- 
+  position: fixed;
+  left: 60%;
+  right: 0;
+  z-index: 100;
+  margin: 20px 20px 20px 20px;
 }
 ` ]
 })

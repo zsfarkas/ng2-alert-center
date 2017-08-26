@@ -6,15 +6,19 @@ import {AlertCenterModule} from './modules/alert-center/alert-center.module';
 import {FormsModule} from '@angular/forms';
 
 describe('AppComponent', () => {
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, AlertGeneratorComponent
+        AppComponent,
+        AlertGeneratorComponent
       ],
-      imports: [AlertCenterModule, FormsModule]
+      imports: [
+        AlertCenterModule,
+        FormsModule
+      ]
     });
     TestBed.compileComponents();
-  });
+  }));
 
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);

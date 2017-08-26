@@ -1,12 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0",
     "name": "ng2-alert-center"
   },
   "apps": [
     {
-      "root": "src/demo",
+      "root": "src",
       "outDir": "demo",
       "assets": [
         "assets",
@@ -37,13 +36,16 @@
   },
   "lint": [
     {
-      "project": "src/demo/tsconfig.app.json"
+      "project": "src/demo/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
     },
     {
-      "project": "src/demo/tsconfig.spec.json"
+      "project": "src/demo/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
     },
     {
-      "project": "src/e2e/tsconfig.e2e.json"
+      "project": "src/e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
     }
   ],
   "test": {
