@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 import {AlertComponent} from './alert.component';
 import {Component} from '@angular/core';
@@ -89,4 +89,24 @@ describe('AlertComponent', () => {
     page.setAlert(new Alert(AlertType.DANGER, '', ''));
     expect(page.getAlertHtmlElement().classList.contains('alert-danger')).toBeTruthy('should have alert-danger');
   });
+
+  it('should emit dismiss event, if alert dismissed', () => {
+    spyOn(page.getAlertComponent().dismissed, 'emit').and.callThrough();
+
+    page.getAlertComponent().dismiss();
+
+    expect(page.getAlertComponent().dismissed.emit).toHaveBeenCalledTimes(1);
+  });
+
+  it('should dismiss automatically, if timeout is defined', fakeAsync(() => {
+    spyOn(page.getAlertComponent(), 'dismiss').and.callThrough();
+
+    page.getAlertComponent().alert = Alert.create(AlertType.INFO, 'TEST', 5000, false);
+    page.getAlertComponent().ngOnInit();
+    page.fixture.detectChanges();
+
+    tick(5000);
+
+    expect(page.getAlertComponent().dismiss).toHaveBeenCalledTimes(1);
+  }));
 });
