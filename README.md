@@ -19,11 +19,27 @@ Currently it uses bootstrap 3 for styling. If you don't use bootstrap, you can j
 
 Hopefully, it is easy to understand by this example, how to use this module. Refer the API description for further information.    
 
+In you module add.
 ```
+import { AlertCenterModule }    from 'ng2-alert-center';
+@NgModule({
+  imports: [
+    ...
+    AlertCenterModule,
+    ...
+  ],
+  ...
+}]
+```
+and the next thing is to import the components and implement the methods.
+
+```
+import { AlertCenterService, Alert, AlertType }             from 'ng2-alert-center'
+
 @Component({
   template: `
     <!-- Insert the alert center component once into your html body /-->
-    <div class="my-alert-center-style>
+    <div class="my-alert-center-style">
       <nac-alert-center [animation]="'fancy'" [htmlTextEnabled]="true"></nac-alert-center>
     </div>
   `
